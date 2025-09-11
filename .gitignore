@@ -1,0 +1,25 @@
+# Binaries
+todo-app
+*.exe
+*.out
+
+# Dependency directories
+vendor/
+
+# Go workspace file
+go.work
+
+# Docker
+Dockerfile
+compose.yaml
+
+# Environment variables
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
