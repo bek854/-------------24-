@@ -1,3 +1,16 @@
+# Todo List App with CI/CD
+
+## Docker Deployment
+Images are automatically built and pushed to DockerHub on git tags:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+# Создайте новую ветку с улучшениями
+git checkout -b improve-ci-cd
+
+# Добавим реальную проверку Docker образа
+cat > .github/workflows/ci-cd.yml << 'EOF'
 name: CI/CD Pipeline
 
 on:
