@@ -2,8 +2,8 @@ name: Go CI/CD with Docker Publishing
 
 on:
   push:
-    branches: [ "main" ]
-    tags: [ "v*" ]
+    branches: ["main"]
+    tags: ["v*"]
 
 jobs:
   test:
@@ -48,13 +48,9 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: |
-          ${{ secrets.DOCKERHUB_USERNAME }}/todo-app:latest
-          ${{ secrets.DOCKERHUB_USERNAME }}/todo-app:${{ github.ref_name }}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/todo-app:latest
 
     - name: Verify uploaded image
       run: |
         echo "âœ… Image successfully pushed to DockerHub"
-        echo "í³¦ Image tags:"
-        echo "- ${{ secrets.DOCKERHUB_USERNAME }}/todo-app:latest"
-        echo "- ${{ secrets.DOCKERHUB_USERNAME }}/todo-app:${{ github.ref_name }}"
+        echo "í³¦ Image tag: ${{ secrets.DOCKERHUB_USERNAME }}/todo-app:latest"
