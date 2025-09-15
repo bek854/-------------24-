@@ -1,4 +1,4 @@
-name: Go CI/CD Pipeline
+name: Go CI/CD with Docker Publishing
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
 
 jobs:
   test:
+    name: Run Tests
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -24,6 +25,7 @@ jobs:
       run: go test -v .
 
   docker-publish:
+    name: Publish to DockerHub
     needs: test
     if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
