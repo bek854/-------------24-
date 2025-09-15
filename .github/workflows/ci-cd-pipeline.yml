@@ -35,4 +35,4 @@ jobs:
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/todo-app:latest
     - run: |
         echo "âœ… Image successfully pushed to DockerHub"
-        echo "ï¿½ï¿½ Image tag: ${{ secrets.DOCKERHUB_USERNAME }}/todo-app:latest"
+        echo "í³¦ Image tag: ${{ secrets.DOCKERHUB_USERNAME }}/todo-app:latest"
